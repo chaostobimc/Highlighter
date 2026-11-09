@@ -133,8 +133,16 @@ Zum Ausprobieren direkt aus der IDE/Shell:
 ./gradlew runClient
 ```
 
-Zusätzlich liegt unter `.github/workflows/build.yml` eine GitHub Action, die bei jedem Push baut und
-den Jar als Artifact hochlädt (Actions → „build" → Artifacts → `highlighter-jar`).
+Zusätzlich liegt unter `docs/github-workflow-build.yml` eine fertige GitHub Action, die den Mod baut
+und den Jar als Artifact hochlädt (Actions → „build" → Artifacts → `highlighter-jar`). Sie liegt
+absichtlich nicht direkt unter `.github/workflows/`, weil der für dieses Repo genutzte GitHub-Token
+keine Workflow-Berechtigung hat. Aktivieren mit:
+
+```bash
+mkdir -p .github/workflows
+cp docs/github-workflow-build.yml .github/workflows/build.yml
+git add .github/workflows/build.yml && git commit -m "ci: build mod" && git push
+```
 
 > **Hinweis:** Diese Quellen wurden in einer Sandbox ohne JDK und ohne Zugriff auf Maven/Fabric-Repos
 > erstellt – dort konnte also nicht kompiliert werden. Alle verwendeten APIs wurden gegen echte

@@ -1,3 +1,14 @@
+# Fertige GitHub-Actions-Workflow-Datei zum Bauen des Mods.
+#
+# Bewusst NICHT unter .github/workflows/ abgelegt, weil der fuer dieses Repo
+# genutzte GitHub-App-Token keine Workflow-Berechtigung hat (Push wuerde mit
+# "refusing to allow a GitHub App to create or update workflow" scheitern).
+#
+# So aktivieren:
+#   mkdir -p .github/workflows
+#   cp docs/github-workflow-build.yml .github/workflows/build.yml
+#   git add .github/workflows/build.yml && git commit -m "ci: build mod" && git push
+
 name: build
 
 on:
