@@ -1,0 +1,31 @@
+{
+	"schemaVersion": 1,
+	"id": "highlighter",
+	"version": "${version}",
+	"name": "Highlighter",
+	"description": "Client-side /highlight command: makes chosen players glow so you can see them through walls. Includes a 'near' mode that highlights everyone around you, and remembers your picks across restarts.",
+	"authors": [
+		"chaostobimc"
+	],
+	"contact": {
+		"sources": "https://github.com/chaostobimc/Highlighter"
+	},
+	"environment": "client",
+	"entrypoints": {
+		"client": [
+			"dev.highlighter.HighlighterClient"
+		]
+	},
+	"mixins": [
+		{
+			"config": "highlighter.client.mixins.json",
+			"environment": "client"
+		}
+	],
+	"depends": {
+		"fabricloader": ">=0.19.5",
+		"minecraft": "~26.3",
+		"java": ">=25",
+		"fabric-api": "*"
+	}
+}

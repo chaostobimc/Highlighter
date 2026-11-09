@@ -1,0 +1,11 @@
+{
+	"required": true,
+	"package": "dev.highlighter.mixin",
+	"compatibilityLevel": "JAVA_25",
+	"client": [
+		"EntityGlowMixin"
+	],
+	"injectors": {
+		"defaultRequire": 1
+	}
+}
